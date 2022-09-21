@@ -1,0 +1,135 @@
+//====================================================================================================
+//====================================================================================================
+.header {
+	width: 100%;
+	position: absolute;
+	padding: 6px 0;
+	z-index: 2;
+	&__container {
+	}
+	&__body {
+	}
+	&__menu {
+		display: flex;
+		align-items: center;
+		flex-flow: row nowrap;
+		gap: 20px;
+	}
+	.menu {
+		&__logo {
+		}
+		&__left {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			gap: 30px;
+			flex: 1 0 auto;
+		}
+		&__body {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			background-color: rgba($color: rgb(0, 0, 0), $alpha: 1);
+			transition: all 0.3s ease 0s;
+			overflow: auto;
+			padding: 100px 0 30px 0;
+			transform: translate(-100%, 0);
+			@media (min-width: $mobile) {
+				display: block;
+				position: static;
+				transform: translate(0, 0);
+				background-color: transparent;
+				height: auto;
+				overflow: hidden;
+				padding: 0;
+			}
+			//Класс для плавного показа меню боди (при нажатии на меню бургер)
+			&.__active-menu--burger {
+				transform: translate(0, 0);
+			}
+		}
+		&__list {
+			display: flex;
+			flex-flow: column;
+			justify-content: space-between;
+			align-items: center;
+			gap: em(54);
+			@media (min-width: $mobile) {
+				flex-flow: row nowrap;
+				justify-content: flex-start;
+				gap: 36px;
+			}
+
+		}
+		&__link {
+			display: inline-block;
+			color: white;
+			font-size: rem(24);
+			text-transform: uppercase;
+			@media (min-width: $mobile) {
+				text-transform: none;
+				font-size: rem(20);
+			}
+		}
+		&__buy-template {
+		}
+	}
+}
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		background-color: transparent;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: rgb(255, 255, 255);
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		// при нажатии на меню бургер превращается в закрывающую кнопку
+		&.menu-open {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+//====================================================================================================

@@ -1,0 +1,83 @@
+.footer {
+    &__container {
+    }
+    &__body {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: column;
+        border-bottom: 1px solid rgba($color: #e5e5e5, $alpha: 0.5);
+        padding-bottom: 29px;
+        gap: 20px;
+        @media (min-width: $mobileSmall) {
+            flex-flow: row;
+        }
+    }
+    &__left {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        gap: 20px;
+    }
+    &__logo {
+        flex: 0 0 auto;
+    }
+    &__menu {
+    }
+    &__list {
+        display: flex;
+        flex-flow: row;
+        gap: 10px;
+    }
+    &__link {
+        display: inline;
+        color: white;
+    }
+    &__icons {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__icon {
+        padding: 10px;
+        background-color: rgba($color: #c4c4c4, $alpha: 0.2);
+        border: 1px solid #e5e5e54d;
+        max-width: rem(45);
+        max-height: rem(45);
+        &:not(:first-child) {
+            margin-left: 15px;
+        }
+    }
+    &__bottom {
+        display: flex;
+        flex-flow: column;
+        padding: 40px 0;
+    }
+    &__bottom-list {
+        li {
+            text-align: center;
+            margin-bottom: rem(25);
+            @media (min-width:$mobile){
+                border-right: 1px solid rgb(255, 255, 255);
+                padding: 0 15px;
+            }
+            span {
+                text-decoration: underline;
+            }
+        }
+        @media (min-width:$mobile){
+             display: flex;
+             flex-flow: row;
+             justify-content: center;
+             align-items: center;
+        }
+    }
+    &__bottom-link {
+        color: white;
+
+    }
+    &__info {
+    }
+}
