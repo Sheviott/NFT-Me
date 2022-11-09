@@ -1,6 +1,4 @@
 .footer {
-    &__container {
-    }
     &__body {
         display: flex;
         flex-flow: column nowrap;
@@ -25,8 +23,7 @@
     &__logo {
         flex: 0 0 auto;
     }
-    &__menu {
-    }
+
     &__list {
         display: flex;
         flex-flow: row;
@@ -77,7 +74,5 @@
     &__bottom-link {
         color: white;
 
-    }
-    &__info {
     }
 }

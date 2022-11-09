@@ -5,10 +5,7 @@
 	position: absolute;
 	padding: 6px 0;
 	z-index: 2;
-	&__container {
-	}
-	&__body {
-	}
+
 	&__menu {
 		display: flex;
 		align-items: center;
@@ -16,8 +13,6 @@
 		gap: 20px;
 	}
 	.menu {
-		&__logo {
-		}
 		&__left {
 			display: flex;
 			flex-flow: row nowrap;
@@ -73,8 +68,6 @@
 				font-size: rem(20);
 			}
 		}
-		&__buy-template {
-		}
 	}
 }
 
@@ -116,9 +109,6 @@
 		&.menu-open {
 			span {
 				width: 0;
-			}
-			&::before,
-			&::after {
 			}
 			&::before {
 				top: calc(50% - rem(1));
